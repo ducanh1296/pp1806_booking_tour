@@ -25,4 +25,7 @@ return [
     'update_success' => 'update success',
     'delete_success' => 'delete success',
     'delete_fail' => 'delete fail',
+    'not_found' => 'not found',
+    'create_fail' => 'create fail',
+    'create_success' => 'create success',
 ];

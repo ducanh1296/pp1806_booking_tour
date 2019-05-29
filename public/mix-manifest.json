@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
+    "/js/delete_category.js": "/js/delete_category.js",
+    "/js/index_order.js": "/js/index_order.js",
     "/js/index_user.js": "/js/index_user.js"
 }

@@ -92,7 +92,7 @@ class TourController extends Controller
         return view('tours.show', ['tour' => $tour]);
     }
 
-    public function edit(EditTourRequest $id) {
+    public function edit($id) {
         $tour = Tour::find($id);
         
         if (!$tour) {

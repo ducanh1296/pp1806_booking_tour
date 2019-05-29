@@ -25,4 +25,7 @@ return [
     'update_success' => 'Cap nhat thanh cong',
     'delete_success' => 'Xoa thanh cong',
     'delete_fail' => 'Xoa that bai',
+    'not_found' => 'Khong tim thay',
+    'create_fail' => 'Tao that bai',
+    'creat_success' => 'Tao thanh cong',
 ];

@@ -31,3 +31,11 @@ Route::post('/users/{user}', 'UsersController@update')->name('users.update');
 Route::get('/orders/create', 'OrdersController@create')->name('orders.create');
 Route::post('/orders', 'OrdersController@store')->name('orders.store');
 Route::get('/orders', 'OrdersController@index')->name('orders.index');
+
+Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
+Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
+Route::get('/categories/{category}', 'CategoryController@show')->name('categories.show');
+Route::post('/categories/{category}', 'CategoryController@update')->name('categories.update');
+Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
+Route::get('/categories', 'CategoryController@index')->name('categories.index');
+Route::post('/categories', 'CategoryController@store')->name('categories.store');
