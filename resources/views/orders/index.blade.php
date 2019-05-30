@@ -21,9 +21,9 @@
                         <thead>
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">User</th>
+                            <th scope="col">UserID</th>
                             <th scope="col">Total Price</th>
-                            <th scope="col">Total Product</th>
+                            <th scope="col">Description</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
                         </tr>
@@ -39,7 +39,6 @@
                                 <td>{{ $order->products->count() }}</td>
                                 <td>
                                     @switch($order->status)
-
                                         @case(config('order.cancelled') == $order->status)
                                         <span class="status badge badge-danger">{{ __('order.status.' . $order->status) }}</span>
                                         @break
