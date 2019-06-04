@@ -1,4 +1,4 @@
-<?php
+	<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +33,10 @@ Route::group(['prefix' => '/admin'], function() {
 
     Route::get('/orders/create', 'OrdersController@create')->name('orders.create');
     Route::post('/orders', 'OrdersController@store')->name('orders.store');
+    Route::post('/orders', 'OrdersController@store')->name('orders.store');
     Route::get('/orders', 'OrdersController@index')->name('orders.index');
+    Route::get('/orders/{order}', 'OrdersController@show')->name('orders.show');
+    Route::delete('orders/{order}', 'OrdersController@destroy')->name('orders.destroy');
 
     Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
     Route::get('/categories/create', 'CategoryController@create')->name('categories.create');

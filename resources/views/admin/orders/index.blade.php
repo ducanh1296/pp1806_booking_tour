@@ -33,10 +33,10 @@
                             <tr class="row_{{ $order->id }}">
                                 <th scope="row">{{ $order->id }}</th>
                                 <td>
-                                    <a href="/users/{{ $order->user->id }}">{{ $order->user->name }}</a>
+                                    <a>{{ $order->user_id }}</a>
                                 </td>
                                 <td>{{ $order->total_price }}</td>
-                                <td>{{ $order->products->count() }}</td>
+                                <td>{{ 2 }}</td>
                                 <td>
                                     @switch($order->status)
 
