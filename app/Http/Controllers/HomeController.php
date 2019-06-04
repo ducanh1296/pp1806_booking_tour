@@ -20,7 +20,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index() {   
+    public function index() {
         $tours = Tour::limit(config('tours.limit'))->get();
 
         return view('home', ['tours' => $tours]);

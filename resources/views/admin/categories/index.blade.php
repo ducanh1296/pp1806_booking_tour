@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
@@ -10,6 +10,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
+                <a href="categories/create" class="btn btn-info" role="button" style="margin-bottom:20px;">{{ __('admin.create_category') }}</a>
                 <div class="card-header">User List</div>
                 <div class="card-body">
                     <table class="table">
@@ -41,5 +42,6 @@
         </div>
     </div>
 </div>
-<script src="js/delete_category.js"></script>
+
+<script src="{{ asset('js/delete_category.js') }}"></script>
 @endsection

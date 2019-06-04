@@ -15,7 +15,7 @@ class TourController extends Controller
     }
 
     public function create() {
-        return view('tours.create');
+        return view('admin.tours.create');
     }
     /**
      * Store a newly created resource in storage.
@@ -47,10 +47,10 @@ class TourController extends Controller
         try {
             $tour = Tour::create($data);
         } catch (Exception $e) {
-            return back()->with('status', 'Create fail!');
+            return back()->with('status', __('message.create_fail'));
         }
         
-        return redirect('tours/' . $tour->id)->with('status', 'Create success!');
+        return redirect('admin/tours/' . $tour->id)->with('status', __('message.create_success'));
     }
 
     private function upload($file) {
@@ -89,7 +89,7 @@ class TourController extends Controller
     public function show($id) {
         $tour = Tour::findOrFail($id);
 
-        return view('tours.show', ['tour' => $tour]);
+        return view('admin.tours.show', ['tour' => $tour]);
     }
 
     public function edit($id) {
@@ -99,7 +99,7 @@ class TourController extends Controller
             return back();
         }
         
-        return view('tours.edit', ['tour' => $tour]);
+        return view('admin.tours.edit', ['tour' => $tour]);
     }
     /**
      * Update the specified resource in storage.
@@ -130,7 +130,7 @@ class TourController extends Controller
             return back()->with('status', trans('message.update_fail'));
         }
         
-        return redirect('products/' . $id)->with('status', trans('message.update_success'));
+        return redirect('admin/tours/' . $id)->with('status', trans('message.update_success'));
     }
 
     public function destroy($id) {

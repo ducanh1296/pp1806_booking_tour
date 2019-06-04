@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('adminlte::page')
 
 @section('content')
 <div class="container">
@@ -70,5 +70,5 @@
     </div>
 </div>
 
-<script src="js/index/index_order.js"></script>
+<script src="{{ asset('js/index_order.js') }}"></script>
 @endsection

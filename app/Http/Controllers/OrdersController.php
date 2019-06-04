@@ -3,7 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Order;
-use App\Http\Request\CreateOrderRequest;
+use App\Http\Requests\CreateOrderRequest;
 
 class OrdersController extends Controller
 {
@@ -15,7 +15,7 @@ class OrdersController extends Controller
     public function index() {
         $orders = Order::paginate(config('orders.paginate'));
 
-        return view('orders.index', ['orders' => $orders]);
+        return view('admin.orders.index', ['orders' => $orders]);
     }
 
     /**
@@ -24,7 +24,7 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create() {
-        return view('orders.create');
+        return view('admin.orders.create');
     }
 
     /**

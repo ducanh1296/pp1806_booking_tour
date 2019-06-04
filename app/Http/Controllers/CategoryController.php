@@ -12,11 +12,11 @@ class CategoryController extends Controller
     public function index() {
         $categories = Category::paginate(config('categories.paginate'));
 
-        return view('categories.index', ['categories' => $categories]);
+        return view('admin.categories.index', ['categories' => $categories]);
     }
 
     public function create() {
-        return view('categories.create');
+        return view('admin.categories.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class CategoryController extends Controller
             return back()->with('status', __('message.create_fail'));
         }
         
-        return redirect('categories/' . $category->id)->with('status', __('message.create_success'));
+        return redirect('admin/categories/' . $category->id)->with('status', __('message.create_success'));
     }
 
     /**
@@ -53,7 +53,7 @@ class CategoryController extends Controller
             return back()->with('status', __('message.not_found'));
         }
 
-        return view('categories.show', ['category' => $category]);
+        return view('admin.categories.show', ['category' => $category]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -68,7 +68,7 @@ class CategoryController extends Controller
             return back()->with('status', __('message.not_found'));
         }
         
-        return view('categories.edit', ['category' => $category]);
+        return view('admin.categories.edit', ['category' => $category]);
     }
 
     /**
@@ -91,7 +91,7 @@ class CategoryController extends Controller
             return back()->with('status', __('message.update_fail'));
         }
         
-        return redirect('categories/' . $id)->with('status', __('message.update_success'));
+        return redirect('admin/categories/' . $id)->with('status', __('message.update_success'));
     }
 
     /**

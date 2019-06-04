@@ -16,7 +16,7 @@ class UsersController extends Controller
     public function index() {
         $users = User::all();
 
-        return view('users.index', ['users' => $users]);
+        return view('admin.users.index', ['users' => $users]);
     }
 
     /**
@@ -47,7 +47,7 @@ class UsersController extends Controller
     public function show($id) {
         $user = User::find($id);
 
-        return view('users.show', ['user' => $user]);
+        return view('admin.users.show', ['user' => $user]);
     }
 
     /**
@@ -63,7 +63,7 @@ class UsersController extends Controller
             return back();
         }
 
-        return view('users.edit', ['user' => $user]);
+        return view('admin.users.edit', ['user' => $user]);
     }
 
     /**
@@ -80,10 +80,10 @@ class UsersController extends Controller
             $user = User::find($id);
             $user->update($data);
         } catch (Exception $e) {
-            return back()->with('status', 'Update fail');
+            return back()->with('status', __('message.create_fail'));
         }
 
-        return redirect('users')->with('status', 'Profile updated!');
+        return redirect('admin.users')->with('status', __('message.create_success'));
     }
 
     /**
@@ -99,12 +99,12 @@ class UsersController extends Controller
             $user->delete();
             $result = [
                 'status' => true,
-                'msg' => 'Delete success',
+                'msg' => __('message.delete_success'),
             ];
         } catch (Exception $e) {
             $result = [
                 'status' => false,
-                'msg' => 'Delete fail',
+                'msg' => __('message.delete_fail'),
             ];
         }
 

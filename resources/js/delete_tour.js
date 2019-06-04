@@ -1,19 +1,23 @@
 $(document).ready(function(){
-    $('.btn-del-user').click(function() {
+
+    $('.btn-del-tour').click(function() {
         if (confirm('You are sure?')) {
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 }
             });
-            var userId = $(this).data('user-id');
-            var url = '/admin/users/' + userId;
+
+            var tourId = $(this).data('tour-id');
+            var url = '/admin/tours/' + tourId;
+
             $.ajax({
                 url: url,
                 type: 'DELETE',
                 success: function(result) {
+
                     if (result.status) {
-                        $('.row_' + userId).remove();
+                        $('.row_' + tourId).remove();
                     } else {
                         alert(result.msg);
                     }

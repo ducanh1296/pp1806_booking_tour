@@ -12,7 +12,7 @@ class RenameOrdersTable extends Migration
      * @return void
      */
     public function up() {
-        if (!Schema::hasTable('order') ) {
+        if (Schema::hasTable('order') ) {
             Schema::rename('order', 'orders');
         }
     }
@@ -23,7 +23,7 @@ class RenameOrdersTable extends Migration
      * @return void
      */
     public function down() {
-        if (!Schema::hasTable('orders') ) {
+        if (Schema::hasTable('orders') ) {
             Schema::rename('orders', 'order');
         }
     }

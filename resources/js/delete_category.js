@@ -9,7 +9,7 @@ $(document).ready(function(){
             });
 
             var categoryId = $(this).data('category-id');
-            var url = '/categories/' + categoryId;
+            var url = '/admin/categories/' + categoryId;
 
             $.ajax({
                 url: url,
