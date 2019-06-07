@@ -45,4 +45,6 @@ Route::group(['prefix' => '/admin'], function() {
     Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
     Route::get('/categories', 'CategoryController@index')->name('categories.index');
     Route::post('/categories', 'CategoryController@store')->name('categories.store');
+
+    Route::post('/cart', 'CartController@cart');
 });
