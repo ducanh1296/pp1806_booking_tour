@@ -53,7 +53,9 @@ class OrdersController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id) {
-        //
+         $order = Order::find($id);
+        
+        return view('orders.show', compact('order'));
     }
 
     /**

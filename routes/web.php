@@ -34,6 +34,7 @@ Route::group(['prefix' => '/admin'], function() {
     Route::get('/orders/create', 'OrdersController@create')->name('orders.create');
     Route::post('/orders', 'OrdersController@store')->name('orders.store');
     Route::get('/orders', 'OrdersController@index')->name('orders.index');
+    Route::get('/orders/{order}', 'OrdersController@show')->name('orders.show');
 
     Route::get('/categories/{category}/edit', 'CategoryController@edit')->name('categories.edit');
     Route::get('/categories/create', 'CategoryController@create')->name('categories.create');
@@ -42,4 +43,6 @@ Route::group(['prefix' => '/admin'], function() {
     Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
     Route::get('/categories', 'CategoryController@index')->name('categories.index');
     Route::post('/categories', 'CategoryController@store')->name('categories.store');
+
+    Route::post('/cart', 'CartController@cart')->name('cart.index');
 });

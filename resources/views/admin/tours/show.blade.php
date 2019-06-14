@@ -31,8 +31,15 @@
             <div class="container">
                 <div class="row no-gutters slider-text align-items-center justify-content-start">
                     <div class="col-md-9 ftco-animate pb-4">
-                        <h1 class="mb-3 bread">{{ $tour->tour_name }}</h1>
-                        <p><a href="#" class="btn btn-primary py-2 px-4">Book this tour</a> <a href="#" class="btn btn-black py-2 px-4">Watch Video</a></p>
+                        <h1 class="mb-3 bread">{{ $tour->tour_name }}</h1>                       
+                        <form method="POST" action="{{ route('cart.index') }}">
+                            <input type="hidden" name="tour_id" value="{{$tour->id}}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-fefault add-to-cart">
+                                <i class="fa fa-shopping-cart"></i>Add to cart
+                            </button>
+                        </form>
+                        <a href="#" class="btn btn-black py-2 px-4">Watch Video</a></p>
                     </div>
                 </div>
             </div>
