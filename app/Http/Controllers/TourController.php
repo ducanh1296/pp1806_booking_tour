@@ -1,10 +1,12 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Tour;
 use Illuminate\Http\Request;
 use App\Http\Requests\CreateTourRequest;
 use App\Http\Requests\UpdateTourRequest;
+use Session;
 
 class TourController extends Controller
 {   

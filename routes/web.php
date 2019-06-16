@@ -42,4 +42,11 @@ Route::group(['prefix' => '/admin'], function() {
     Route::delete('/categories/{category}', 'CategoryController@destroy')->name('categories.destroy');
     Route::get('/categories', 'CategoryController@index')->name('categories.index');
     Route::post('/categories', 'CategoryController@store')->name('categories.store');
+
+    Route::get('/add-to-cart/{id}', 'CartController@getAddToCart')->name('cart.addToCart');
+    Route::get('/delete-cart-all', 'CartController@deleteCartAll')->name('cart.deleteCartAll');
+    Route::delete('/delete-cart-item/{id}', 'CartController@deleteCartItem')->name('cart.deleteCartItem');
+    Route::get('/shopping-cart', 'CartController@getCart')->name('cart.shoppingCart');
+    Route::get('/up-cart-qty/{id}', 'CartController@upCartQty')->name('cart.upCartQty');
+    Route::get('/down-cart-qty/{id}', 'CartController@downCartQty')->name('cart.downCartQty');
 });

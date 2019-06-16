@@ -13,6 +13,12 @@
                 <a href="tours/create" class="btn btn-info" role="button" style="margin-bottom:20px;">{{ __('admin.create_tour') }}</a>
                 <div class="card-header">{{ __('admin.list_tour') }}</div>
                 <div class="card-body">
+                    <li>
+                        <a href="{{ route('cart.shoppingCart') }}">
+                            <i class="fa fa-shopping-cart" aria-hidden="true"></i> Shopping Cart
+                            <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '' }}</span>
+                        </a>
+                    </li>
                     <table class="table">
                         <thead>
                         <tr>
